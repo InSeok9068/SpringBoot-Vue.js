@@ -6,7 +6,7 @@ name: Deploy String boot
 on:
   push:
     branches:
-      - ㅡmain
+      - main
 
 jobs:
   deploy:
