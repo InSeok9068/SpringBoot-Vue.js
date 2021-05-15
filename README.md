@@ -1,4 +1,4 @@
-# spring-boot-vuejs
+# spring-boot-vuejs 
 
 [![Build Status](https://github.com/jonashackt/spring-boot-vuejs/workflows/build/badge.svg)](https://github.com/jonashackt/spring-boot-vuejs/actions)
 [![codecov](https://codecov.io/gh/jonashackt/spring-boot-vuejs/branch/master/graph/badge.svg?token=gMQBTyKuKS)](https://codecov.io/gh/jonashackt/spring-boot-vuejs)
