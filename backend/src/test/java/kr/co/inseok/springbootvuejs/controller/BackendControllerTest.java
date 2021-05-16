@@ -42,9 +42,7 @@ public class BackendControllerTest {
 
 	@Test
     public void addNewUserAndRetrieveItBack() {
-        User norbertSiegmund = new User("Norbert", "Siegmund");
-
-        Long userId =
+        String userId =
             given()
                 .pathParam("firstName", "Norbert")
                 .pathParam("lastName", "Siegmund")
@@ -53,7 +51,7 @@ public class BackendControllerTest {
             .then()
                 .statusCode(is(HttpStatus.SC_CREATED))
                 .extract()
-                    .body().as(Long.class);
+                    .body().as(String.class);
 
 	    User responseUser =
             given()
@@ -72,7 +70,7 @@ public class BackendControllerTest {
 
 	@Test
 	public void user_api_should_give_http_404_not_found_when_user_not_present_in_db() {
-		Long someId = 200L;
+		String someId = "1";
 		given()
 			.pathParam("id", someId)
 		.when()

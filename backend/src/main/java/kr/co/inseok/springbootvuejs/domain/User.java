@@ -1,14 +1,12 @@
 package kr.co.inseok.springbootvuejs.domain;
 
-import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document("users")
 public class User {
 
     // PrimaryKey
-    @Id
-    private long id;
+    private String id;
 
     private String firstName;
     private String lastName;
@@ -23,7 +21,7 @@ public class User {
     @Override
     public String toString() {
         return String.format(
-                "User[id=%d, firstName='%s', lastName='%s']",
+                "User[id=%s, firstName='%s', lastName='%s']",
                 id, firstName, lastName);
     }
 
@@ -43,11 +41,11 @@ public class User {
         this.lastName = lastName;
     }
 
-    public long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(String id) {
         this.id = id;
     }
 }
