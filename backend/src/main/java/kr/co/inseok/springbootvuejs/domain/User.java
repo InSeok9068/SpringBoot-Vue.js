@@ -1,14 +1,13 @@
 package kr.co.inseok.springbootvuejs.domain;
 
-import javax.persistence.*;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-@Entity
-@Table(name="users")
+@Document("users")
 public class User {
 
     // PrimaryKey
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
     private String firstName;
