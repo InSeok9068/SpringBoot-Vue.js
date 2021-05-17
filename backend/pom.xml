@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<artifactId>backend</artifactId>
@@ -23,6 +23,16 @@
 		<groovy.version>3.0.8</groovy.version>
 	</properties>
 
+	<profiles>
+		<profile>
+			<id>company</id>
+			<properties>
+				<system.env>company</system.env>
+				<skipTests>true</skipTests>
+			</properties>
+		</profile>
+	</profiles>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -44,23 +54,23 @@
 		</dependency>
 
 		<!-- [START] RDB JPA 연동 -->
-<!--		<dependency>-->
-<!--			<groupId>org.springframework.boot</groupId>-->
-<!--			<artifactId>spring-boot-starter-data-jpa</artifactId>-->
-<!--		</dependency>-->
+		<!--		<dependency>-->
+		<!--			<groupId>org.springframework.boot</groupId>-->
+		<!--			<artifactId>spring-boot-starter-data-jpa</artifactId>-->
+		<!--		</dependency>-->
 
-<!--		&lt;!&ndash; In-Memory database used for local development & testing &ndash;&gt;-->
-<!--		<dependency>-->
-<!--			<groupId>com.h2database</groupId>-->
-<!--			<artifactId>h2</artifactId>-->
-<!--		</dependency>-->
+		<!--		&lt;!&ndash; In-Memory database used for local development & testing &ndash;&gt;-->
+		<!--		<dependency>-->
+		<!--			<groupId>com.h2database</groupId>-->
+		<!--			<artifactId>h2</artifactId>-->
+		<!--		</dependency>-->
 
-<!--		&lt;!&ndash; Switch back from Spring Boot 2.x standard HikariCP to Tomcat JDBC,-->
-<!--		configured later in Heroku (see https://stackoverflow.com/a/49970142/4964553) &ndash;&gt;-->
-<!--		<dependency>-->
-<!--			<groupId>org.apache.tomcat</groupId>-->
-<!--			<artifactId>tomcat-jdbc</artifactId>-->
-<!--		</dependency>-->
+		<!--		&lt;!&ndash; Switch back from Spring Boot 2.x standard HikariCP to Tomcat JDBC,-->
+		<!--		configured later in Heroku (see https://stackoverflow.com/a/49970142/4964553) &ndash;&gt;-->
+		<!--		<dependency>-->
+		<!--			<groupId>org.apache.tomcat</groupId>-->
+		<!--			<artifactId>tomcat-jdbc</artifactId>-->
+		<!--		</dependency>-->
 		<!-- [END] RDB JPA 연동 -->
 
 		<!-- Testing -->
@@ -106,31 +116,31 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 			<plugin>
-                <artifactId>maven-resources-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>copy Vue.js frontend content</id>
-                        <phase>generate-resources</phase>
-                        <goals>
-                            <goal>copy-resources</goal>
-                        </goals>
-                        <configuration>
-                            <outputDirectory>src/main/resources/public</outputDirectory>
-                            <overwrite>true</overwrite>
-                            <resources>
-                                <resource>
-                                    <directory>${project.parent.basedir}/frontend/target/dist</directory>
-                                    <includes>
-                                        <include>static/</include>
-                                        <include>index.html</include>
+				<artifactId>maven-resources-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>copy Vue.js frontend content</id>
+						<phase>generate-resources</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>src/main/resources/public</outputDirectory>
+							<overwrite>true</overwrite>
+							<resources>
+								<resource>
+									<directory>${project.parent.basedir}/frontend/target/dist</directory>
+									<includes>
+										<include>static/</include>
+										<include>index.html</include>
 										<include>favicon.ico</include>
-                                    </includes>
-                                </resource>
-                            </resources>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
+									</includes>
+								</resource>
+							</resources>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 	</build>
 

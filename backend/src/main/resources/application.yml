@@ -12,3 +12,14 @@ spring:
   data:
     mongodb:
       uri: mongodb+srv://mogodb:mogodb@mongocluster.rkn4e.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: company
+  data:
+    mongodb:
+      uri: mongodb://127.0.0.1:27017
+      database: myFirstDatabase
