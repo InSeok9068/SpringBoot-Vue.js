@@ -7,7 +7,7 @@ const axiosApi = axios.create({
 });
 
 interface User {
-    id: string;
+    id: number;
     firstName: string;
     lastName: string;
 }
