@@ -132,8 +132,13 @@
 									<directory>${project.parent.basedir}/frontend/target/dist</directory>
 									<includes>
 										<include>static/</include>
+										<include>img/</include>
+										<include>tinymce/</include>
 										<include>index.html</include>
-										<include>favicon.ico</include>
+										<include>manifest.json</include>
+										<include>precache-manifest.acb1605f3e61a34f7674a17819ebbd9b.js</include>
+										<include>robots.txt</include>
+										<include>service-worker.js</include>
 									</includes>
 								</resource>
 							</resources>

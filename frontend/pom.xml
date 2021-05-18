@@ -30,7 +30,7 @@
 							<goal>install-node-and-npm</goal>
 						</goals>
 						<configuration>
-							<nodeVersion>v15.8.0</nodeVersion>
+							<nodeVersion>v14.8.0</nodeVersion>
 						</configuration>
 					</execution>
 					<!-- Install all project dependencies -->
@@ -48,12 +48,12 @@
 					</execution>
 					<!-- Build and minify static files -->
 					<execution>
-						<id>npm run build</id>
+						<id>npm run build:prod</id>
 						<goals>
 							<goal>npm</goal>
 						</goals>
 						<configuration>
-							<arguments>run build</arguments>
+							<arguments>run build:prod</arguments>
             			</configuration>
 					</execution>
 					<!-- Run Unit tests with Jest -->
