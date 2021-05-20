@@ -184,6 +184,22 @@ export const asyncRoutes: RouteConfig[] = [
     ]
   },
   {
+    path: '/girlfriend',
+    component: Layout,
+    children: [
+      {
+        path: 'girlfriend',
+        component: () => import(/* webpackChunkName: "girlfriend" */ '@/views/girlfriend/index.vue'),
+        name: 'Girlfriend',
+        meta: {
+          title: 'girlfriend',
+          icon: 'like',
+          noCache: true
+        }
+      }
+    ]
+  },
+  {
     path: '/icon',
     component: Layout,
     children: [

@@ -7,6 +7,7 @@ export default {
     rolePermission: '역할 권한',
     pagePermission: '페이지 권한',
     directivePermission: '지시 권한',
+    girlfriend: '어부 ♥',
     icons: '아이콘',
     components: '구성 요소',
     tinymce: 'TinyMCE',
