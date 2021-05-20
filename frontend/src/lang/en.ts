@@ -7,6 +7,7 @@ export default {
     pagePermission: 'Page Permission',
     rolePermission: 'Role Permission',
     directivePermission: 'Directive Permission',
+    girlfriend: 'Girlfriend ♥',
     icons: 'Icons',
     components: 'Components',
     tinymce: 'Tinymce',
