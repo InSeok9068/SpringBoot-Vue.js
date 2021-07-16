@@ -62,4 +62,4 @@ jobs:
         with:
           to: ${{ secrets.TELEGRAM_TO_ID }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
-          message: 서버 배포가 완료하였습니다.
+          message: 서버 배포가 완료하였습니다. 
